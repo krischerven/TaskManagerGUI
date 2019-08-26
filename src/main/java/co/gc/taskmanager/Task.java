@@ -40,7 +40,7 @@ public class Task {
 	@Override
 	public String toString() {
 		return "\"" + desc + "\": " + " (" + "Due on " + strong(dueDate) + ") " + " (" + "Completed: " + 
-				(completed ? mark(good("yes"), false) : mark(bad("no"), true)) + "): Assigned to " + email;
+				(completed ? mark(good("yes"), false) : mark(bad("no"), true)) + "): Assigned to " + email + " (<a href=\"remove-task?id="+id+"\">DELETE</a>)";
 	}
 	// getters
 	public Long getid() {
