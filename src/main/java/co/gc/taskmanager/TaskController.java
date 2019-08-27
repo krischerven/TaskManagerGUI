@@ -38,8 +38,16 @@ public class TaskController {
 		return m;
 	}
 	
+	@RequestMapping("/view-tasks-email")
+	public ModelAndView viewTasks(@RequestParam("email") String email) {
+		ModelAndView m = new ModelAndView("view-tasks", "tasks", tasks.toString(email));
+		/* don't really need this anymore */
+		//m.addObject("blurb", "<h4><em><a href=\"remove-tasks\" style=\"margin-left: 1%\">Remove all tasks</a></em></h4>");
+		return m;
+	}
+	
 	@RequestMapping("/view-tasks-error")
-	public ModelAndView viewTasks(String error) {
+	public ModelAndView viewTasksError(String error) {
 		return new ModelAndView("view-tasks", "tasks", error);
 	}
 	
@@ -54,7 +62,7 @@ public class TaskController {
 			tasks.addTask(new Task(email, desc, dueDate, false));
 			return viewTasks();
 		} else {
-			return viewTasks("<center><h2 class = \"text-danger\"><strong>Error: no email \"" + email + "\" was found in our account registry.</strong></h2></center>");
+			return viewTasksError("<center><h2 class = \"text-danger\"><strong>Error: no email \"" + email + "\" was found in our account registry.</strong></h2></center>");
 		}
 	}
 	

@@ -27,9 +27,14 @@
 <ol>
 	<li><a href="create-account">Create a new Task Manager account</a></li><br>
 	<li><a href="adding-task">Add a new task</a></li><br>
-	<li><a href="view-tasks">View existing tasks</a></li>
+	<li><a href="#" onclick="view_tasks_js();">View existing tasks</a> (Email: <input type="email" id="email" style="font-style: italic" name="email" placeholder="johndoe@gmail.com">)</li>
 </ol>
 </h3>
 </div>
+<script>
+function view_tasks_js() {
+	window.location.href="view-tasks-email?email="+document.getElementById("email").value;
+}
+</script>
 </body>
 </html>
