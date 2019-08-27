@@ -21,7 +21,7 @@
 </nav>
 <br>
 <div class="container">
-<h2>Welcome to the <span class="text-primary"><strong>Task Manager™ GUI</strong></span><br>Please click one of the hyperlinks below to get started:</h2>
+<h2>Welcome to the <span class="text-primary"><strong><a href="#">Task Manager™ GUI</a></strong></span><br>Please click one of the hyperlinks below to get started:</h2>
 <br>
 <h3>
 <ol>
