@@ -19,4 +19,7 @@ public class UserRepository {
 	public boolean hasUser(String email) {
 		return database.query("SELECT * FROM users WHERE email = '"+email+"'", new BeanPropertyRowMapper<User>(User.class)).size() > 0;
 	}
+	public boolean hasUser(String email, String password) {
+		return database.query("SELECT * FROM users WHERE email = '"+email+"' OR password = '"+password+"'", new BeanPropertyRowMapper<User>(User.class)).size() > 0;
+	}
 }
