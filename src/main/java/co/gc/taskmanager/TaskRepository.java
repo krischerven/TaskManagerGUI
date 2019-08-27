@@ -37,10 +37,14 @@ public class TaskRepository {
 	@Override
 	public String toString() {
 		String ret = "<br><center><h2>Task List</h2></center><br>";
+		ret += "<ol>";
 		for (Task task : getTasks()) {
-			ret += ("<h3 style=\"margin-left: 1%\">"+task+"</h3>");
-			ret += "\n";
+			ret += ("<h3 style=\"margin-left: 1%\"><li>"+task+"</li></h3>");
+			if (task != getTasks().get(getTasks().size()-1)) {
+				ret += "\n";
+			}
 		}
+		ret += "</ol>";
 		return ret;
 	}
 }
